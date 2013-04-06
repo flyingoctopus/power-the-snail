@@ -13,6 +13,11 @@
  *= require_tree .
 */
 
+header {
+  width: 100%;
+  margin:0px auto;
+}
+
 .content {
   background-color: #eee;
   padding: 20px;
@@ -23,4 +28,26 @@
   -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.15);
   -moz-box-shadow: 0 1px 2px rgba(0,0,0,.15);
   box-shadow: 0 1px 2px rgba(0,0,0,.15);
+}
+
+h1 {
+  text-align: center;
+  color:#175B65;
+  font: 95px/1 "Impact";
+  text-transform: uppercase;
+  display: block;
+  text-shadow:#253e45 -1px 1px 0,
+  #253e45 -2px 2px 0,
+  #8B1A0A -3px 3px 0,
+  #8B1A0A -4px 4px 0;
+  margin: 5% auto 5%;
+}
+#fitimg {
+  width  : 100%;
+  height : auto;
+}
+
+#main {
+  margin: 0 auto;
+  float: none;
 }

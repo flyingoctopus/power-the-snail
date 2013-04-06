@@ -2,20 +2,24 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-/*body {*/
-  /*background: #233a40; */
-  /*color: #fff;*/
-  /*font: 16px/1.8 sans-serif;*/
-/*}*/
+/*body {
+  background: #233a40; 
+  color: #fff;
+  font: 16px/1.8 sans-serif;
+}*/
+
+.home {
+  width: 84%;
+  margin:0 auto;
+  max-width:1140px;
+}
+
 .container {
   width: 84%;
   margin:0 auto;
   max-width:1140px;
 }
-header {
-  width: 100%;
-  margin:0px auto;
-}
+
 h1 {
   text-align: center;
   color:#175B65;
@@ -44,3 +48,4 @@ ul li.action {
   margin-right:5%;
 }
 /*.row {text-align: center}*/
+/*.container { width: 100%; }*/

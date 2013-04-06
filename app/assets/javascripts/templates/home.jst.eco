@@ -1,28 +1,35 @@
-<div>
-  <!--[if IE]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
-</head>
-
-<body>
-
-  <div class="container">
-    <header>
-      <img id="fitimg" src="https://dl.dropbox.com/u/567408/%3Ab%3A/captains_log.png" alt="alt" />
-    <div class="row">
-      <div class="span12">
-        <ul class="ulAction">
-          <li class="action"><h1 id="fittext1">Register</h1></li>
-          <li class="action"><h1 id="fittext2">Log In</h1></li>
-        </ul>
+<div class="home">
+  <header>
+    <div class="row-fluid">
+      <div id="main" class="span9">
+        <h1>SnailNet</h1>
       </div>
     </div>
-    </header>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+  </header>
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+  <div class="row">
+    <div class="span3"><div id="chartDiv1" style="width: 200px; height:150px;"></div></div>
+    <div class="span3"><div id="chartDiv2" style="width: 200px; height:150px;"></div></div>
+    <div class="span3"><div id="chartDiv3" style="width: 200px; height:150px;"></div></div>
+    <div class="span3"><div id="chartDiv4" style="width: 200px; height:150px;"></div></div>
   </div>
-  
-  <!-- <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script> -->
-  <script type="text/javascript">
-    /*$("#fittext1").fitText();*/
-    /*$("#fittext2").fitText();*/
-  </script>
 
+  <footer>
+    <div class="footer">
+      <div class="container narrow row-fluid">
+        <div class="span3">
+            text
+        </div>
+        <div class="span3">
+            text
+        </div>
+        <div class="span3">
+            text
+        </div>
+        <div class="span3">
+            text
+        </div>
+      </div>
+    </div>
+  </footer>
 </div>
