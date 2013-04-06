@@ -13,7 +13,21 @@ window.HomeView = Backbone.View.extend
     @$el.html compiledTemplate()
     @
 
-  getData: ->
+  poll: ->
+
+  request: ->
+    $.getJSON "users.json", (data) ->
+      items = []
+      $.each data, (key, val) ->
+      items.push "<li id=\"" + key + "\">" + val + "</li>"
+
+      $("<ul/>",
+      class: "my-new-list"
+      html: items.join("")
+      ).appendTo "body"
+  
+
+    $.get('data.json', after: $('').last().data('id'))
 
   setupTable: ->
     $("table#leaderboard").tablesorter({ sortList: [[1,0]] })
@@ -62,3 +76,15 @@ window.HomeView = Backbone.View.extend
       labelFontColor: "#000"
       showInnerShadow: true
     )
+
+    @request()
+
+  checkUser: (callback) ->
+    that = this
+    $.ajax "api/auth/logged_in",
+      type: "GET"
+      dataType: "json"
+      success: ->
+        callback true
+      error: ->
+      callback false

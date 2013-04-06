@@ -11,7 +11,23 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120604193651) do
+ActiveRecord::Schema.define(:version => 20130406210025) do
+
+  create_table "data", :force => true do |t|
+    t.integer  "chair"
+    t.float    "value"
+    t.string   "user"
+    t.datetime "timestamp"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "messages", :force => true do |t|
+    t.text     "body"
+    t.boolean  "published"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "roles", :force => true do |t|
     t.string   "name"
@@ -38,6 +54,7 @@ ActiveRecord::Schema.define(:version => 20120604193651) do
     t.datetime "created_at",                             :null => false
     t.datetime "updated_at",                             :null => false
     t.string   "name"
+    t.integer  "score"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

@@ -1,10 +1,8 @@
 class HomeController < ApplicationController
   def index
-    Rails.logger.info '======================================='
-    Rails.logger.info '======================================='
-    Rails.logger.info '======================================='
+    @users = User.find(:all, :select => 'name, score' )
+    @message = Message.first
     if user_signed_in?
-      Rails.logger.info current_user.inspect
     end
   end
 
@@ -30,4 +28,9 @@ class HomeController < ApplicationController
 
     sp.close
   end
+
+  def avatar_url(user)  
+    gravatar_id = Digest::MD5::hexdigest(user.email).downcase
+    "http://gravatar.com/avatar/#{gravatar_id}.png"
+  end 
 end

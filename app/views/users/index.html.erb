@@ -1,32 +1,14 @@
 <h1>Admin</h1>
-<div class="container row-fluid">
-  <div id="adminForm" class="span6">
-    <from class="form-horizontal">
-      <div class="control-group">
-        <label class="control-label" for="inputMessage">Message of the Day</label>
+<div class="row-fluid">
+  <div class="span12 well">
+    <%= form_for @message do |f| %>
+      <fieldset>
+        <legend>Edit Message of the Day</legend>
         <div class="controls">
-          <textarea type="password" id="inputMessage" placeholder="Message Here" rows="19"></textarea>
+          <%= f.text_area :body, :class => "field span12" %><br />
         </div>
-      </div>
-      <div class="control-group">
-        <div class="controls">
-          <button type="submit" class="btn">Submit</button>
-        </div>
-      </div>
-    </form>
+      <%= f.submit %>
+    <% end %>
   </div>
 </div>
 
-<%= form_for @message do |f| %>
-  <%= f.label :content %>:
-  <%= f.text_area :first_name %><br />
-  <%= f.submit %>
-<% end %>
-
-<ul class="users">
-  <% @users.each do |user| %>
-    <li>
-      <%= link_to user.name, user %> signed up <%= user.created_at.to_date %>
-    </li>
-  <% end %>
-</ul>

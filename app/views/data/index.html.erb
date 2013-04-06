@@ -1,0 +1,29 @@
+<h1>Listing data</h1>
+
+<table>
+  <tr>
+    <th>Chair</th>
+    <th>Value</th>
+    <th>User</th>
+    <th>Timestamp</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @data.each do |datum| %>
+  <tr>
+    <td><%= datum.chair %></td>
+    <td><%= datum.value %></td>
+    <td><%= datum.user %></td>
+    <td><%= datum.timestamp %></td>
+    <td><%= link_to 'Show', datum %></td>
+    <td><%= link_to 'Edit', edit_datum_path(datum) %></td>
+    <td><%= link_to 'Destroy', datum, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Datum', new_datum_path %>

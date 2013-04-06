@@ -1,4 +1,8 @@
 Pm::Application.routes.draw do
+  resources :data
+
+  resources :messages
+
   authenticated :user do
     root :to    => 'home#index'
   end

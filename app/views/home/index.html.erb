@@ -1,2 +1,117 @@
 <div id='app'>
+  <div class="home">
+    <header>
+      <div class="container row-fluid">
+        <div id="sub" class="span3">
+          <h2>Home</h2>
+        </div>
+        <div id="main" class="span9">
+          <h1>SnailNet</h1>
+        </div>
+      </div>
+    </header>
+    <div class="row-fluid" style="padding-bottom: 150px;">
+      <div class="span3"><div id="chartDiv1" style="width: 200px; height:150px;"></div></div>
+      <div class="span3"><div id="chartDiv2" style="width: 200px; height:150px;"></div></div>
+      <div class="span3"><div id="chartDiv3" style="width: 200px; height:150px;"></div></div>
+      <div class="span3"><div id="chartDiv4" style="width: 200px; height:150px;"></div></div>
+    </div>
+    <div class="row-fluid">
+      <div class="span4">
+      <div id="newletter">
+        <p><%= @message.body.html_safe %></p>
+      </div>
+      </div>
+      <div class="span4">
+        <div id="login">
+          <form class="form-horizontal">
+            <div class="control-group">
+              <label class="control-label" for="inputEmail">Email</label>
+              <div class="controls">
+                <input type="text" id="inputEmail" placeholder="Email">
+              </div>
+            </div>
+            <div class="control-group">
+              <label class="control-label" for="inputPassword">Password</label>
+              <div class="controls">
+                <input type="password" id="inputPassword" placeholder="Password">
+              </div>
+            </div>
+            <div class="control-group">
+              <div class="controls">
+                <button type="submit" class="btn btn-large btn-block">Sign in</button>
+              </div>
+            </div>
+          </form> 
+        </div>
+      </div>
+      <div class="span4">
+        <div id="signup">
+          <form class="form-horizontal">
+            <div class="control-group">
+              <label class="control-label" for="inputEmail">Email</label>
+              <div class="controls">
+                <input type="text" id="inputEmail" placeholder="Email">
+              </div>
+            </div>
+            <div class="control-group">
+              <div class="controls">
+                <button type="submit" class="btn btn-large btn-block sign-in-button">Sign Up</button>
+              </div>
+            </div>
+          </form> 
+        </div>
+      </div>
+    </div>
+    <table class="leaderboard"></table>
+
+  <div class="container row-fluid">
+    <div class="span-12">
+      <table class="table table-bordered table-striped">
+          <thead>
+              <tr>
+                  <th>Rank</th>
+                  <th>Name</th>
+                  <th>Score</th>
+              </tr>
+          </thead>
+          <tbody>
+            <% @users.each_with_index do |user, index| %>
+                <tr>
+                  <td><%= index %></td>
+                  <td><%= user.name %></td>
+                  <td><%= user.score %></td>
+                </tr>
+            <% end %>
+          </tbody>
+      </table>
+      <div class="switch" data-on-label="Me" data-off-label="All">
+        <input type="checkbox">
+      </div>
+
+    </div>
+  </div>
+
+
+    
+
+      <footer style="padding-top:50px;">
+        <div class="footer">
+        <div class="container row-fluid">
+          <div class="span3">
+            Copyright 2013 Wilder Snail
+          </div>
+          <div class="span3">
+            About Us
+          </div>
+          <div class="span3">
+            What is SnailNet?
+          </div>
+          <div class="span3">
+            Open Source
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
 </div>
