@@ -1,5 +1,28 @@
-<h1>Users#index</h1>
-<p>Find me in app/views/users/index.html.erb</p>
+<h1>Admin</h1>
+<div class="container row-fluid">
+  <div id="adminForm" class="span6">
+    <from class="form-horizontal">
+      <div class="control-group">
+        <label class="control-label" for="inputMessage">Message of the Day</label>
+        <div class="controls">
+          <textarea type="password" id="inputMessage" placeholder="Message Here" rows="19"></textarea>
+        </div>
+      </div>
+      <div class="control-group">
+        <div class="controls">
+          <button type="submit" class="btn">Submit</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+
+<%= form_for @message do |f| %>
+  <%= f.label :content %>:
+  <%= f.text_area :first_name %><br />
+  <%= f.submit %>
+<% end %>
+
 <ul class="users">
   <% @users.each do |user| %>
     <li>

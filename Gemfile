@@ -23,4 +23,5 @@ gem "font-awesome-rails"
 gem "simple_form"
 gem "ejs"
 gem "redis"
-gem "leaderboard"
+gem "serialport", "~> 1.1.0"
+

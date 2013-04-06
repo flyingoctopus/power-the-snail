@@ -14,10 +14,11 @@
 //= require jquery_ujs
 //= require jquery.fittext
 //= require bootstrap
+//= require bootstrapSwitch
 //= require underscore
 //= require backbone
 //= require backbone.marionette
 //= require_tree .
 
 $ ->
-  ReadyAppsRouter.start()
+ ReadyAppsRouter.start()

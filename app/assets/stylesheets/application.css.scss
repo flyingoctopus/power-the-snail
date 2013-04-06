@@ -10,6 +10,7 @@
  *
  *= require_self
  *= require font-awesome
+ *= require bootstrapSwitch
  *= require_tree .
 */
 
@@ -18,8 +19,13 @@ header {
   margin:0px auto;
 }
 
+table {
+  width:100%;
+  margin-bottom:18px;
+  font-size:13px;
+}
 .content {
-  background-color: #eee;
+  background-color: rgba(200,200,200,0.7);
   padding: 20px;
   margin: 0 -20px; /* negative indent the amount of the padding to maintain the grid system */
   -webkit-border-radius: 0 0 6px 6px;
@@ -48,6 +54,16 @@ h1 {
 }
 
 #main {
+  margin: 0 auto;
+  float: none;
+}
+
+#sub {
+  margin: 0 auto;
+  float: none;
+}
+
+#adminForm {
   margin: 0 auto;
   float: none;
 }

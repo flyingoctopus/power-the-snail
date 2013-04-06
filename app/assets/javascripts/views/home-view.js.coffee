@@ -13,13 +13,21 @@ window.HomeView = Backbone.View.extend
     @$el.html compiledTemplate()
     @
 
+  getData: ->
+
+  setupTable: ->
+    $("table#leaderboard").tablesorter({ sortList: [[1,0]] })
+
   setupGagues: ->
     g1 = new JustGage(
       id: "chartDiv1"
       value: 67
       min: 0
       max: 100
-      title: "Stool #1"
+      title: "Stool 1"
+      titleFontColor: "#000"
+      labelFontColor: "#000"
+      showInnerShadow: true
     )
 
     g2 = new JustGage(
@@ -27,7 +35,10 @@ window.HomeView = Backbone.View.extend
       value: 67
       min: 0
       max: 100
-      title: "Stool #1"
+      title: "Stool 2"
+      titleFontColor: "#000"
+      labelFontColor: "#000"
+      showInnerShadow: true
     )
 
     g3 = new JustGage(
@@ -35,7 +46,10 @@ window.HomeView = Backbone.View.extend
       value: 67
       min: 0
       max: 100
-      title: "Stool #1"
+      title: "Stool 3"
+      titleFontColor: "#000"
+      labelFontColor: "#000"
+      showInnerShadow: true
     )
 
     g4 = new JustGage(
@@ -43,5 +57,8 @@ window.HomeView = Backbone.View.extend
       value: 67
       min: 0
       max: 100
-      title: "Stool #1"
+      title: "Stool 4"
+      titleFontColor: "#000"
+      labelFontColor: "#000"
+      showInnerShadow: true
     )
