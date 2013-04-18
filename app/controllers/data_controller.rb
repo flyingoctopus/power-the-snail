@@ -28,6 +28,9 @@ class DataController < ApplicationController
   # GET /data/new
   # GET /data/new.json
   def new
+    # @chair_1_data where
+    # @chair_2_data
+    # @chair_3_data
     @datum = Datum.new
 
     respond_to do |format|

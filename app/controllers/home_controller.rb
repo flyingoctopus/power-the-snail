@@ -2,8 +2,16 @@ class HomeController < ApplicationController
   def index
     @users = User.find(:all, :select => 'name, score' )
     @message = Message.first
-    if user_signed_in?
-    end
+    #@chair_1_current = 
+    #@chair_2_current
+    #@chair_3_current
+    #@chair_4_current
+
+    @chair_1_total = Datum.where( :chair => 1).all
+    @chair_2_total = Datum.where( :chair => 2).all
+    @chair_3_total = Datum.where( :chair => 3).all
+    @chair_4_total = Datum.where( :chair => 4).all
+    self.fetch_data
   end
 
   def fetch_data
