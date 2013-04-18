@@ -26,7 +26,7 @@
         </div>
       </div>
       <div class="span4">
-        <%= form_for("user", :url => user_session_path, :html => {:class => "form-horizontal"}) do |f| %>
+        <%= form_for("user", :url => user_session_path, :html => {:class => "form-vertical"}) do |f| %>
           <fieldset>
             <div class="control-group">
               <label class="control-label" for="user_email">Email</label>
@@ -38,15 +38,29 @@
         </div>
             <div class="control-group">
               <%= f.label :remember_me, :class => 'control-label' %>
-              <div class="controls"><%= f.check_box :remember_me, :style => "margin-top: 10px;" %></div>
+              <div class="controls"><%= f.check_box :remember_me, :style => "margin-top: 0px;" %></div>
             </div>
             <div class="form-actions" ><%= f.submit 'Sign in', :class => 'btn btn-primary' %>
-            <%= link_to 'Sign up', new_user_registration_path, :class => 'btn', :style => 'margin-left: 20px;' %> </div></div>
+            <%= link_to 'Register', new_user_registration_path, :class => 'btn', :style => 'margin-left: 20px;' %> </div>
             <%= link_to "Forgot your password?", new_password_path('user') %>
+</div>
           </fieldset>
         <% end %>
       </div>
       <div class="span4">
+        <%= form_for("user", :url => user_session_path, :html => {:class => "form-vertical"}) do |f| %>
+          <fieldset>
+            <div class="control-group">
+              <label class="control-label" for="user_email">Snailnet Newsletter</label>
+              <div class="controls"><%= f.text_field :email, :placeholder => "Sign Up!" %></div>
+            </div>
+            <div class="control-group">
+              <div class="form-actions" >
+                <%= f.submit 'Sign Up', :class => 'btn btn-primary' %>
+              </div>
+            </div>
+          </fieldset>
+        <% end %>
       </div>
     </div>
   </div>

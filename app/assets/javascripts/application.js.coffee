@@ -32,6 +32,11 @@ window.App =
       items = []
       $.each data, (key, val) ->
         console.log "key: " + key + "val: " + val
+        # g1.refresh val if key == chair1
+        # g2.refresh val if key == chair1
+        # g3.refresh val if key == chair1
+        # g4.refresh val if key == chair1
+        # g5.refresh val if key == chair1
 
     $.get('data.json', after: $('').last().data('id'))
 
