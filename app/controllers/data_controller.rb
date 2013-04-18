@@ -3,6 +3,10 @@ class DataController < ApplicationController
   # GET /data.json
   def index
     @data = Datum.all
+    @chair_1 = Datum.where( :chair => 1).all
+    @chair_2 = Datum.where( :chair => 2 ).all
+    @chair_3 = Datum.where( :chair => 3 ).all
+    @chair_4 = Datum.where( :chair => 4 ).all
 
     respond_to do |format|
       format.html # index.html.erb

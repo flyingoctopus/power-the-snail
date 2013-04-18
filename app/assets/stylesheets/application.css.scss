@@ -37,11 +37,10 @@ table {
 }
 
 h1 {
-  text-align: center;
   color:#175B65;
-  font: 95px/1 "Impact";
+  font: 75px/1 "Impact";
   text-transform: uppercase;
-  display: block;
+  /*display: block;*/
   text-shadow:#253e45 -1px 1px 0,
   #253e45 -2px 2px 0,
   #8B1A0A -3px 3px 0,
@@ -53,15 +52,15 @@ h1 {
   height : auto;
 }
 
-#main {
-  margin: 0 auto;
-  float: none;
-}
+/*#main {*/
+  /*margin: 0 auto;*/
+  /*float: none;*/
+/*}*/
 
-#sub {
-  margin: 0 auto;
-  float: none;
-}
+/*#sub {*/
+  /*margin: 0 auto;*/
+  /*float: none;*/
+/*}*/
 
 #adminForm {
   margin: 0 auto;

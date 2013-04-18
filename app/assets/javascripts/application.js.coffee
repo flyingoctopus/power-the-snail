@@ -24,21 +24,14 @@ window.App =
   initialize: ->
     $("#app").hide()
     $("#app").fadeIn()
-    console.log 'this is being fired!'
 
   poll: ->
 
   request: ->
-    $.getJSON "users.json", (data) ->
+    $.getJSON "data.json", (data) ->
       items = []
       $.each data, (key, val) ->
-      items.push "<li id=\"" + key + "\">" + val + "</li>"
-
-      $("<ul/>",
-      class: "my-new-list"
-      html: items.join("")
-      ).appendTo "body"
-  
+        console.log "key: " + key + "val: " + val
 
     $.get('data.json', after: $('').last().data('id'))
 

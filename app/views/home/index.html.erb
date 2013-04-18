@@ -2,15 +2,18 @@
   <div class="home">
     <header>
       <div class="container row-fluid">
-        <div id="sub" class="span3">
+        <div class='span12'
+        <div id="sub" class="span3 text-right">
           <h2>Home</h2>
         </div>
-        <div id="main" class="span9">
+        <div id="main" class="span12 text-center">
           <h1>SnailNet</h1>
         </div>
       </div>
+      </div>
     </header>
-    <div class="row-fluid" style="padding-bottom: 150px;">
+<div id="userNotLoggedIn">
+    <div class="row-fluid stoolGagues" style="padding-bottom: 50px; text-align: center;">
       <div class="span3"><div id="chartDiv1" style="width: 200px; height:150px;"></div></div>
       <div class="span3"><div id="chartDiv2" style="width: 200px; height:150px;"></div></div>
       <div class="span3"><div id="chartDiv3" style="width: 200px; height:150px;"></div></div>
@@ -37,7 +40,8 @@
               <%= f.label :remember_me, :class => 'control-label' %>
               <div class="controls"><%= f.check_box :remember_me, :style => "margin-top: 10px;" %></div>
             </div>
-            <div class="form-actions" ><%= f.submit 'Sign in', :class => 'btn btn-primary' %></div>
+            <div class="form-actions" ><%= f.submit 'Sign in', :class => 'btn btn-primary' %>
+            <%= link_to 'Sign up', new_user_registration_path, :class => 'btn', :style => 'margin-left: 20px;' %> </div></div>
             <%= link_to "Forgot your password?", new_password_path('user') %>
           </fieldset>
         <% end %>
@@ -46,7 +50,9 @@
       </div>
     </div>
   </div>
+</div> <!-- id="userNotLoggedIn" -->
 
+<div id="userLoggedIn">
   <div class="container row-fluid">
     <div class="span12" style="text-align:center; padding-bottom: 45px;">
       <div class="span4"></div>
@@ -59,7 +65,7 @@
     </div>
   </div>
 
-  <div class="container row-fluid">
+  <div id="leaderboard" class="container row-fluid">
     <div class="span12">
       <table class="table table-bordered table-striped leaderboard">
           <thead>
@@ -84,7 +90,7 @@
       <div class="span4"></div>
 
     </div>
-  </div>
+  </div> <!-- userLoggedIn -->
 
       <footer style="padding-top:50px;">
         <div class="footer">
@@ -106,3 +112,14 @@
     </footer>
   </div>
 </div>
+<script type="text/javascript">
+  $( document ).ready(function() {
+    <% if user_signed_in? %>
+      $('#userLoggedIn').fadeIn();
+      $('#userNotLoggedIn').hide();
+    <% else %>
+      $('#userLoggedIn').hide();
+      $('#userNotLoggedIn').fadeIn();
+    <% end %>
+  });
+</script>
