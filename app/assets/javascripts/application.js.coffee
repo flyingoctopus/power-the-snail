@@ -44,6 +44,10 @@ window.App =
 
   setupTable: ->
     $("table#leaderboard").tablesorter({ sortList: [[1,0]] })
+    $("#chartDivUser").hide()
+    $(".switch").on "switch-change", (e, data) ->
+      value = data.value
+      App.toggleTable(value)
 
   setupGagues: ->
     g1 = new JustGage(
@@ -90,7 +94,31 @@ window.App =
       showInnerShadow: true
     )
 
+    g5 = new JustGage(
+      id: "chartDivUser"
+      value: 67
+      min: 0
+      max: 100
+      title: "Stool 4"
+      titleFontColor: "#000"
+      labelFontColor: "#000"
+      showInnerShadow: true
+    )
+
     @request()
+
+  toggleTable: (e) ->
+    switch e
+      when true then App.showUserGague()
+      when false then App.showLeaderboard()
+
+  showUserGague: ->
+    $('.leaderboard').fadeOut()
+    $('#chartDivUser').fadeIn()
+
+  showLeaderboard: ->
+    $('#chartDivUser').fadeOut()
+    $('.leaderboard').fadeIn()
 
   checkUser: (callback) ->
     that = this
@@ -103,7 +131,9 @@ window.App =
       callback false
 
 $ ->
-  App.initialize()
-  App.setupGagues()
+  if $('#chartDiv1').get(0)
+    App.initialize()
+    App.setupGagues()
+    App.setupTable()
 
 
