@@ -31,7 +31,8 @@ window.App =
     $.getJSON "data.json", (data) ->
       items = []
       $.each data, (key, val) ->
-        console.log "key: " + key + "val: " + val
+        console.log "key: " + key + " val: " + val
+        console.log val
         # g1.refresh val if key == chair1
         # g2.refresh val if key == chair1
         # g3.refresh val if key == chair1
@@ -48,7 +49,7 @@ window.App =
       App.toggleTable(value)
 
   setupGagues: ->
-    g1 = new JustGage(
+    @g1 = new JustGage(
       id: "chartDiv1"
       value: 67
       min: 0
@@ -59,7 +60,7 @@ window.App =
       showInnerShadow: true
     )
 
-    g2 = new JustGage(
+    @g2 = new JustGage(
       id: "chartDiv2"
       value: 67
       min: 0
@@ -70,7 +71,7 @@ window.App =
       showInnerShadow: true
     )
 
-    g3 = new JustGage(
+    @g3 = new JustGage(
       id: "chartDiv3"
       value: 67
       min: 0
@@ -81,7 +82,7 @@ window.App =
       showInnerShadow: true
     )
 
-    g4 = new JustGage(
+    @g4 = new JustGage(
       id: "chartDiv4"
       value: 67
       min: 0
@@ -92,7 +93,7 @@ window.App =
       showInnerShadow: true
     )
 
-    g5 = new JustGage(
+    @g5 = new JustGage(
       id: "chartDivUser"
       value: 67
       min: 0

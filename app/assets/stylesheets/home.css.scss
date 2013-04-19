@@ -12,19 +12,23 @@ body {
 }
 
 .home {
-  width: 84%;
+  width: 100%;
   margin:0 auto;
-  max-width:1400px;
+  max-width:1170px;
 }
 
 .container {
-  width: 84%;
+  width: 80%;
   margin:0 auto;
-  max-width:1140px;
+  max-width:1170px;
+}
+
+#app {
+  margin:0 auto;
+  max-width:1170px;
 }
 
 h1 {
-  /*text-align: center;*/
   color:#175B65;
   font: 60px/1 "Impact";
   text-transform: uppercase;
@@ -33,25 +37,39 @@ h1 {
   #8B1A0A -3px 3px 0,
   #8B1A0A -4px 4px 0;
   margin: 5% auto 5%;
+  a {
+    color:#175B65;
+    font: 60px/1 "Impact";
+    text-transform: uppercase;
+    text-shadow:#253e45 -1px 1px 0,
+    #253e45 -2px 2px 0,
+    #8B1A0A -3px 3px 0,
+    #8B1A0A -4px 4px 0;
+    margin: 5% auto 5%;
+
+  }
+a:link {text-decoration:none;}
+a:visited {text-decoration:none;}
+a:hover {text-decoration:underline;}
+a:active {text-decoration:underline;}
 }
+
 #fitimg {
   width  : 100%;
   height : auto;
 }
+
 ul.ulAction {
   list-style-type:none;
   margin: 0;
   padding: 0;
   text-align:center;
 }
+
 ul li.action {
   display: block;
   float:left;
   margin-right:5%;
-}
-.sign-in-button {
-  display:block;
-  width:100%;
 }
 /*.row {text-align: center}*/
 /*.container { width: 100%; }*/

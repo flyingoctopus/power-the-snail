@@ -10,7 +10,14 @@ class DataController < ApplicationController
 
     respond_to do |format|
       format.html # index.html.erb
-      format.json { render json: @data }
+      format.json { render :json => {
+          :all_data => @data,
+          :chair_1 => @chair_1.last,
+          :chair_2 => @chair_2,
+          :chair_3 => @chair_3.last,
+          :chair_4 => @chair_4.last
+        }
+      }
     end
   end
 

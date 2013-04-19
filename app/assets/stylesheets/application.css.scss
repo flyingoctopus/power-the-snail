@@ -24,6 +24,7 @@ table {
   margin-bottom:18px;
   font-size:13px;
 }
+
 .content {
   background-color: rgba(200,200,200,0.7);
   padding: 20px;
@@ -38,31 +39,45 @@ table {
 
 h1 {
   color:#175B65;
-  font: 75px/1 "Impact";
+  font: 60px/1 "Impact";
   text-transform: uppercase;
-  /*display: block;*/
   text-shadow:#253e45 -1px 1px 0,
   #253e45 -2px 2px 0,
   #8B1A0A -3px 3px 0,
   #8B1A0A -4px 4px 0;
   margin: 5% auto 5%;
+  a {
+    color:#175B65;
+    font: 60px/1 "Impact";
+    text-transform: uppercase;
+    text-shadow:#253e45 -1px 1px 0,
+    #253e45 -2px 2px 0,
+    #8B1A0A -3px 3px 0,
+    #8B1A0A -4px 4px 0;
+    margin: 5% auto 5%;
+  }
+a:link {text-decoration:none;}
+a:visited {text-decoration:none;}
+a:hover {text-decoration:underline;}
+a:active {text-decoration:underline;}
 }
+
+h2 {
+  padding-top:25px;
+  color: rgba(25,25,25,0.2);
+}
+
 #fitimg {
   width  : 100%;
   height : auto;
 }
 
-/*#main {*/
-  /*margin: 0 auto;*/
-  /*float: none;*/
-/*}*/
-
-/*#sub {*/
-  /*margin: 0 auto;*/
-  /*float: none;*/
-/*}*/
-
 #adminForm {
   margin: 0 auto;
   float: none;
+}
+
+@media (max-width: 480px) {
+  h1 { font: 12px; }
+
 }

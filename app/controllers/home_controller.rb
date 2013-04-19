@@ -11,7 +11,7 @@ class HomeController < ApplicationController
     @chair_2_total = Datum.where( :chair => 2).all
     @chair_3_total = Datum.where( :chair => 3).all
     @chair_4_total = Datum.where( :chair => 4).all
-    self.fetch_data
+    #self.fetch_data
   end
 
   def fetch_data

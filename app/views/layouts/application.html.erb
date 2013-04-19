@@ -26,12 +26,45 @@
         <div class="content">
            <div class="row">
             <div class="span12">
-              <%= render 'layouts/messages' %>
+              <header>
+                <div class="container row">
+                  <div class='span12'>
+                  </div>
+                  <div id="main" class="span12 text-center">
+                    <div id="sub" class="span3 text-right">
+                      <h2 class="subheader" style="text-align:right; padding-right: 15px; float:right; display:inline;">Home</h2>
+                    </div>
+                    <h1 style="display:inline;"><%= link_to 'SnailNet', root_path %></h1>
+                  </div>
+                </div>
+                </div>
+              </header>
+              <div class="row-fluid">
+                <div class="span12" style="padding-top:50px;padding-left:30px;">
+                  <%= render 'layouts/messages' %>
+                </div>
+              </div>
               <%= yield %>
+              <footer style="padding-top:50px;">
+                <div class="footer">
+                <div class="container row-fluid">
+                  <div class="span3">
+                    Copyright 2013 Wilder Snail
+                  </div>
+                  <div class="span3">
+                    About Us
+                  </div>
+                  <div class="span3">
+                    What is SnailNet?
+                  </div>
+                  <div class="span3">
+                    Open Source
+                  </div>
+                </div>
+              </div>
+            </footer>
             </div>
           </div>
-          <footer>
-          </footer>
         </div>
       </div> <!--! end of .container -->
     </div> <!--! end of #main -->
