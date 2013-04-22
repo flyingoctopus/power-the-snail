@@ -1,5 +1,5 @@
-SnailNet
---------
+Power The Snail
+---------------
 
 ![power the snail](http://i.imgur.com/qwk2C.jpg)
 
