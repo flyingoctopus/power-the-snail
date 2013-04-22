@@ -1,5 +1,6 @@
 Power The Snail
 ---------------
+A Gastropowered corner shop
 
 ![power the snail](http://i.imgur.com/qwk2C.jpg)
 
