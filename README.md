@@ -3,7 +3,9 @@ SnailNet
 
 ![power the snail](http://i.imgur.com/qwk2C.jpg)
 
-COMPLETE:
+##Tasks
+
+###COMPLETE:
   * ux, ia, wd (8)
   * Station Data Vis (16.0)
   * News/Special CMS (2.04)
@@ -16,10 +18,10 @@ COMPLETE:
   * Mobile Site (8)
 
 
-PENDING:
+###PENDING:
   * Total Input/Output bike data (17)
 
-TODO:
+###TODO:
   * profile image storing (not recommended on rpi, gravatar?)
   ** optimize server for rpi (too many requests slow the server down)
   * table scrolling/pagination
