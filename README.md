@@ -2,12 +2,12 @@ SnailNet
 --------
 
 COMPLETE:
-  * user x, ia, wd
-  * Station Data Vis (16)
-  * News/Special CMS (2)
-  * Login & Reg Flow (4)
-  * Subscribe to Mailing List (1)
-  * Dynamic Forms & Error Handling (2)
+  * ux, ia, wd (8)
+  * Station Data Vis (16.0)
+  * News/Special CMS (2.04)
+  * Login & Reg Flow (4.10)
+  * Subscribe to Mailing List (0.8)
+  * Dynamic Forms & Error Handling (2.22)
   * Username lookup (1)
   * Data store (7)
   * Leaderboard (10)
@@ -15,7 +15,7 @@ COMPLETE:
 
 
 PENDING:
-  * Input/Output bike data (20)
+  * Total Input/Output bike data (17)
 
 TODO:
   * profile image storing (not recommended on rpi, gravatar?)

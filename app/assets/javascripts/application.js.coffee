@@ -51,7 +51,7 @@ window.App =
   setupGagues: ->
     @g1 = new JustGage(
       id: "chartDiv1"
-      value: 67
+      value: 35
       min: 0
       max: 100
       title: "Stool 1"
@@ -73,7 +73,7 @@ window.App =
 
     @g3 = new JustGage(
       id: "chartDiv3"
-      value: 67
+      value: 84
       min: 0
       max: 100
       title: "Stool 3"
@@ -84,7 +84,7 @@ window.App =
 
     @g4 = new JustGage(
       id: "chartDiv4"
-      value: 67
+      value: 17
       min: 0
       max: 100
       title: "Stool 4"
@@ -134,5 +134,3 @@ $ ->
     App.initialize()
     App.setupGagues()
     App.setupTable()
-
-
