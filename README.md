@@ -1,6 +1,8 @@
 SnailNet
 --------
 
+![power the snail](http://i.imgur.com/qwk2C.jpg)
+
 COMPLETE:
   * ux, ia, wd (8)
   * Station Data Vis (16.0)
