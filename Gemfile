@@ -23,5 +23,6 @@ gem "font-awesome-rails"
 gem "simple_form"
 gem "ejs"
 gem "redis"
-gem "serialport", "~> 1.1.0"
 
+# run this standalone this is very important
+gem "serialport-server", "~> 0.0.3"

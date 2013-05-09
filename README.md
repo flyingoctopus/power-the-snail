@@ -29,3 +29,4 @@ A Gastropowered corner shop
   * WAP on ddwrt
   * swipe landing page 
   * Dynamic Login Button
+  * route for admin redirect as opaque /admin link.

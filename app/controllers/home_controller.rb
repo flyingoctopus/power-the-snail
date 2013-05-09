@@ -16,7 +16,8 @@ class HomeController < ApplicationController
 
   def fetch_data
     #params for serial port
-    port_str = "/dev/ttyUSB0"  #may be different
+    #port_str = "/dev/tty.usbserial"  #may be different
+    port_str = "/dev/tty.usbserial-A6004agj"  #may be different
     baud_rate = 9600
     data_bits = 8
     stop_bits = 1
@@ -24,8 +25,14 @@ class HomeController < ApplicationController
 
     sp = SerialPort.new(port_str, baud_rate, data_bits, stop_bits, parity)
 
+    Thread.new do
+      while true do
+        Rails.logger.info Time.now # or call tick function
+        sleep 1
+      end
+    end
     #just read forever to find how to terminate
-    while true do
+    while false do
       Rails.logger.info 'READING'
       while (i = sp.gets.chomp) do       # see note 2
         Rails.logger.info '-----------------------------------'
@@ -33,7 +40,6 @@ class HomeController < ApplicationController
         #puts i.class #String
       end
     end
-
     sp.close
   end
 

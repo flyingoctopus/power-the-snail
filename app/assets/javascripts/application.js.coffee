@@ -26,6 +26,10 @@ window.App =
     $("#app").fadeIn()
 
   poll: ->
+    ws = new WebSocket("ws://localhost:8784")
+    ws.onmessage = (e) ->
+      App.updateGagues(e)
+
 
   request: ->
     $.getJSON "data.json", (data) ->
@@ -33,13 +37,8 @@ window.App =
       $.each data, (key, val) ->
         console.log "key: " + key + " val: " + val
         console.log val
-        # g1.refresh val if key == chair1
-        # g2.refresh val if key == chair1
-        # g3.refresh val if key == chair1
-        # g4.refresh val if key == chair1
-        # g5.refresh val if key == chair1
 
-    $.get('data.json', after: $('').last().data('id'))
+    #$.get('data.json', after: $('').last().data('id'))
 
   setupTable: ->
     $("table#leaderboard").tablesorter({ sortList: [[1,0]] })
@@ -49,6 +48,7 @@ window.App =
       App.toggleTable(value)
 
   setupGagues: ->
+    console.log 'setup gagues'
     @g1 = new JustGage(
       id: "chartDiv1"
       value: 35
@@ -104,7 +104,15 @@ window.App =
       showInnerShadow: true
     )
 
-    @request()
+  updateGagues: (e) ->
+    $('.btn-group').children('button').each ->
+      App.g5.refresh e.data.split(",")[$(@).val()] if $(@).hasClass("active")
+
+    @g1.refresh e.data.split(",")[0]
+    @g2.refresh e.data.split(",")[1]
+    @g3.refresh e.data.split(",")[2]
+    @g4.refresh e.data.split(",")[3]
+
 
   toggleTable: (e) ->
     switch e
@@ -134,3 +142,4 @@ $ ->
     App.initialize()
     App.setupGagues()
     App.setupTable()
+    App.poll()
