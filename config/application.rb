@@ -73,6 +73,7 @@ module Pm
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
 
+
     # Read Serial Data
     #config.serial_port = SerialPort.new "/devttyACM0", 9600
     #config.serial_port.read_timeout = 100

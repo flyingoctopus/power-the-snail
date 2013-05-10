@@ -18,11 +18,11 @@ gem "launchy", ">= 2.1.0", :group => :test
 gem "devise", ">= 2.1.0"
 gem "cancan", ">= 1.6.7"
 gem "rolify", ">= 3.1.0"
-gem "bootstrap-sass", ">= 2.0.3"
-gem "font-awesome-rails"
-gem "simple_form"
 gem "ejs"
 gem "redis"
+gem "simple_form"
+gem "bootstrap-sass", ">= 2.0.3"
+gem "font-awesome-rails"
 
 # run this standalone this is very important
 gem "serialport-server", "~> 0.0.3"
