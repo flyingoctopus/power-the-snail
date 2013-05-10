@@ -1,4 +1,4 @@
-Pm::Application.routes.draw do
+SnailNet::Application.routes.draw do
   resources :data
 
   resources :messages
