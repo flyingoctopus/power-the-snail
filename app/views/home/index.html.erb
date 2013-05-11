@@ -10,7 +10,7 @@
           </div>
         </div>
         <div class="container">
-        <div class="row-fluid stoolGaguesMobile" style="padding-bottom: 50px;">
+        <!-- <div class="row-fluid stoolGaguesMobile" style="padding-bottom: 50px;">
           <div class="span12">
             <div class="bxSlider">
               <div id="chartDiv1mobile" style="width: 300px; height:150px;">wat</div>
@@ -19,7 +19,7 @@
               <div id="chartDiv4mobile" style="width: 300px; height:150px;">wat</div>
             </div>
           </div>
-        </div>
+        </div> -->
         <div class="container">
           <div class="row-fluid">
             <div class="span12">
@@ -75,40 +75,6 @@
     </div> <!-- id="userNotLoggedIn" -->
 
     <div id="userLoggedIn">
-      <div class="container row-fluid">
-        <div class="span12" style="text-align:center; padding-bottom: 45px;">
-          <div class="span4"></div>
-          <div class="span4">
-
-          </div>
-          <div class="span4"></div>
-        </div>
-      </div>
-      <div class="container row-fluid">
-        <div class="span12" style="text-align:center; padding-bottom: 45px;">
-          <div class="span4"></div>
-          <div class="span4">
-            <h3 style="padding-bottom:25px;">View Toggle</h3>
-            <div class="switch" data-on-label="All" data-off-label="Me">
-              <input type="checkbox">
-            </div>
-          </div>
-          <div class="span4"></div>
-        </div>
-      </div>
-
-      <div class="chairSelect container row">
-        <h3 style="padding-bottom:25px;">Please select your station</h3>
-        <div class="span12" style="text-align:center; padding-bottom: 45px;">
-            <div class="btn-group chair-select" data-toggle="buttons-radio">
-              <button id="chair1_select" value='0' type="button" class="btn">One</button>
-              <button id="chair2_select" value='1' type="button" class="btn">Two</button>
-              <button id="chair3_select" value='2' type="button" class="btn">Three</button>
-              <button id="chair4_select" value='3' type="button" class="btn">Four</button>
-          </div>
-        </div>
-      </div>
-
       <div id="leaderboard" class="container row-fluid">
         <div class="span12">
           <div class="allGagues container">
@@ -119,12 +85,34 @@
                 <div class="span3"><div id="chartDiv4Leaderboard" style="width: 173px; height:150px;"></div></div>
               </div>
             </div>
-          <div class="span6" style="text-aligin:center;"><div id="chartDivUser" ></div></div>
+
+              <div class="span6" style="text-aligin:center;">
+                <h2 id="userChairLabel" style="padding-bottom:25px;">Where are you?</h2>
+                <div id="chartDivUser" style="" ></div>
+              </div>
           </div>
-
-
         </div>
       </div> <!-- userLoggedIn -->
+      <div class="container row-fluid">
+        <div class="span12" style="text-align:center;">
+          <div class="span4">
+            <h3 style="padding-bottom:25px;">Select where you are</h3>
+            <button id="chair1_select" value='0' type="button" class="btn">One</button>
+            <button id="chair2_select" value='1' type="button" class="btn">Two</button>
+            <button id="chair3_select" value='2' type="button" class="btn">Three</button>
+            <button id="chair4_select" value='3' type="button" class="btn">Four</button>
+          </div>
+          <div class="span4">
+          </div>
+          <div class="span4">
+            <h3 style="padding-bottom:25px;">View Toggle</h3>
+            <div class="switch" data-on-label="All" data-off-label="Me">
+              <input type="checkbox">
+            </div>
+          </div>
+        </div>
+      </div>
+
 
   </div>
 </div>

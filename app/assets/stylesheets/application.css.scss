@@ -81,13 +81,29 @@ h2 {
   text-align:center;
 }
 
+.navbar-inner {
+  background-color: rgba(50,50,50,0.3); /* fallback. color, place your own */
+
+  /* Gradients for modern browsers, replace as you see fit */
+  background-image: -moz-linear-gradient(top, rgba(50,50,50,0.3), rgba(50,50,50,0.3));
+  background-image: -ms-linear-gradient(top, rgba(50,50,50,0.3), rgba(50,50,50,0.3));
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(rgba(50,50,50,0.3)), to(rgba(50,50,50,0.3)));
+  background-image: -webkit-linear-gradient(top, rgba(50,50,50,0.3), rgba(50,50,50,0.3));
+  background-image: -o-linear-gradient(top, rgba(50,50,50,0.3), rgba(50,50,50,0.3));
+  background-image: linear-gradient(top, rgba(50,50,50,0.3), rgba(50,50,50,0.3));
+  background-repeat: repeat-x;
+
+  /* IE8-9 gradient filter */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='rgba(50,50,50,0.3)', endColorstr='rgba(50,50,50,0.3)', GradientType=0);
+}
+
 @media (max-width: 480px) {
   /*.stoolGagues { display: none; }*/
   /*.stoolGaguesMobile { display: block; }*/
-  #chartDivUser { width: 400px; height: 340px; }
+  #chartDivUser { width: 220px; height: 160px; margin-top: -50px;}
 }
 @media (min-width: 480px) {
   /*.stoolGagues { display: block; }*/
   /*.stoolGaguesMobile { display: none; }*/
-  #chartDivUser { width: 800px; height: 600px; }
+  #chartDivUser { width: 800px; height: 600px; margin-top: -200px;}
 }

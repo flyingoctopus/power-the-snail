@@ -50,13 +50,17 @@ window.App =
       value = data.value
       App.toggleTable(value)
     $("#chair1_select").click ->
-      App.chair = 1
+      App.chair = 0
+      $("#userChairLabel").html "Chair 1"
     $("#chair2_select").click ->
-      App.chair = 2
+      App.chair = 1
+      $("#userChairLabel").html "Chair 2"
     $("#chair3_select").click ->
-      App.chair = 3
+      App.chair = 2
+      $("#userChairLabel").html "Chair 3"
     $("#chair4_select").click ->
-      App.chair = 4
+      App.chair = 3
+      $("#userChairLabel").html "Chair 4"
     
 
   setupGagues: ->
@@ -114,6 +118,7 @@ window.App =
       value: 67
       min: 0
       max: 60
+      title: " "
       titleFontColor: "#000"
       labelFontColor: "#000"
       label: "Watts"
@@ -121,57 +126,57 @@ window.App =
       #relativeGaugeSize: true
     )
 
-    @g1mobile = new JustGage(
-      id: "chartDiv1mobile"
-      value: 35
-      min: 0
-      max: 60
-      title: "Stool 1"
-      titleFontColor: "#000"
-      labelFontColor: "#000"
-      showInnerShadow: true
-      relativeGaugeSize: true
-      label: "Watts"
-    )
+    #@g1mobile = new JustGage(
+      #id: "chartDiv1mobile"
+      #value: 35
+      #min: 0
+      #max: 60
+      #title: "Stool 1"
+      #titleFontColor: "#000"
+      #labelFontColor: "#000"
+      #showInnerShadow: true
+      #relativeGaugeSize: true
+      #label: "Watts"
+    #)
 
-    @g2mobile = new JustGage(
-      id: "chartDiv2mobile"
-      value: 67
-      min: 0
-      max: 60
-      title: "Stool 2"
-      titleFontColor: "#000"
-      labelFontColor: "#000"
-      showInnerShadow: true
-      relativeGaugeSize: true
-      label: "Watts"
-    )
+    #@g2mobile = new JustGage(
+      #id: "chartDiv2mobile"
+      #value: 67
+      #min: 0
+      #max: 60
+      #title: "Stool 2"
+      #titleFontColor: "#000"
+      #labelFontColor: "#000"
+      #showInnerShadow: true
+      #relativeGaugeSize: true
+      #label: "Watts"
+    #)
 
-    @g3mobile = new JustGage(
-      id: "chartDiv3mobile"
-      value: 84
-      min: 0
-      max: 60
-      title: "Stool 3"
-      titleFontColor: "#000"
-      labelFontColor: "#000"
-      showInnerShadow: true
-      relativeGaugeSize: true
-      label: "Watts"
-    )
+    #@g3mobile = new JustGage(
+      #id: "chartDiv3mobile"
+      #value: 84
+      #min: 0
+      #max: 60
+      #title: "Stool 3"
+      #titleFontColor: "#000"
+      #labelFontColor: "#000"
+      #showInnerShadow: true
+      #relativeGaugeSize: true
+      #label: "Watts"
+    #)
 
-    @g4mobile = new JustGage(
-      id: "chartDiv4mobile"
-      value: 17
-      min: 0
-      max: 60
-      title: "Stool 4"
-      titleFontColor: "#000"
-      labelFontColor: "#000"
-      showInnerShadow: true
-      relativeGaugeSize: true
-      label: "Watts"
-    )
+    #@g4mobile = new JustGage(
+      #id: "chartDiv4mobile"
+      #value: 17
+      #min: 0
+      #max: 60
+      #title: "Stool 4"
+      #titleFontColor: "#000"
+      #labelFontColor: "#000"
+      #showInnerShadow: true
+      #relativeGaugeSize: true
+      #label: "Watts"
+    #)
 
     # Temp
     @g1Leaderboard = new JustGage(
@@ -240,8 +245,7 @@ window.App =
     @g3Leaderboard.refresh Math.round e.data.split(",")[2] * current
     @g4Leaderboard.refresh Math.round e.data.split(",")[3] * current
 
-    @g5.refresh Math.round e.data.split(",")[App.chair] * current
-    console.log App.chair
+    @g5.refresh Math.round e.data.split(",")[App.chair] * current * 2
 
 
 
