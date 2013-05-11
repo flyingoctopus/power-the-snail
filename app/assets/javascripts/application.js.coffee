@@ -236,10 +236,10 @@ window.App =
     @g2.refresh Math.round e.data.split(",")[1] * current
     @g3.refresh Math.round e.data.split(",")[2] * current
     @g4.refresh Math.round e.data.split(",")[3] * current
-    @g1mobile.refresh Math.round e.data.split(",")[0] * current
-    @g2mobile.refresh Math.round e.data.split(",")[1] * current
-    @g3mobile.refresh Math.round e.data.split(",")[2] * current
-    @g4mobile.refresh Math.round e.data.split(",")[3] * current
+    #@g1mobile.refresh Math.round e.data.split(",")[0] * current
+    #@g2mobile.refresh Math.round e.data.split(",")[1] * current
+    #@g3mobile.refresh Math.round e.data.split(",")[2] * current
+    #@g4mobile.refresh Math.round e.data.split(",")[3] * current
     @g1Leaderboard.refresh Math.round e.data.split(",")[0] * current
     @g2Leaderboard.refresh Math.round e.data.split(",")[1] * current
     @g3Leaderboard.refresh Math.round e.data.split(",")[2] * current
