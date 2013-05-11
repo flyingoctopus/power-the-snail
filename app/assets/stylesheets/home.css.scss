@@ -28,18 +28,38 @@ body {
   max-width:1170px;
 }
 
-h1 {
-  color:#9d5e3a;
-  font: 60px/1 "Impact";
-  text-transform: uppercase;
-  text-shadow:#682b0f -1px 1px 0,
-  #253e45 -2px 2px 0,
-  #8B1A0A -3px 3px 0,
-  #8B1A0A -4px 4px 0;
-  margin: 5% auto 5%;
-  letter-spacing: 2px;
-  a {
-    color:#a5551d;
+@media (max-width: 480px) {
+  h1 {
+    padding-left:15px;
+    color:#9d5e3a;
+    font: 50px/1 "Impact";
+    text-transform: uppercase;
+    text-shadow:#682b0f -1px 1px 0,
+    #253e45 -2px 2px 0,
+    #8B1A0A -3px 3px 0,
+    #8B1A0A -4px 4px 0;
+    margin: 5% auto 5%;
+    letter-spacing: 2px;
+    a {
+      color:#a5551d;
+      font: 50px/1 "Impact";
+      text-transform: uppercase;
+      text-shadow:#682b0f -1px 1px 0,
+      #253e45 -2px 2px 0,
+      #8B1A0A -3px 3px 0,
+      #8B1A0A -4px 4px 0;
+      margin: 5% auto 5%;
+    }
+  a:link {text-decoration:none;}
+  a:visited {text-decoration:none;}
+  a:hover {text-decoration:none; color: #ccc;}
+  a:active {text-decoration:none;}
+  }
+}
+
+@media (min-width: 480px) {
+  h1 {
+    color:#9d5e3a;
     font: 60px/1 "Impact";
     text-transform: uppercase;
     text-shadow:#682b0f -1px 1px 0,
@@ -47,11 +67,22 @@ h1 {
     #8B1A0A -3px 3px 0,
     #8B1A0A -4px 4px 0;
     margin: 5% auto 5%;
+    letter-spacing: 2px;
+    a {
+      color:#a5551d;
+      font: 60px/1 "Impact";
+      text-transform: uppercase;
+      text-shadow:#682b0f -1px 1px 0,
+      #253e45 -2px 2px 0,
+      #8B1A0A -3px 3px 0,
+      #8B1A0A -4px 4px 0;
+      margin: 5% auto 5%;
+    }
+  a:link {text-decoration:none;}
+  a:visited {text-decoration:none;}
+  a:hover {text-decoration:underline;}
+  a:active {text-decoration:underline;}
   }
-a:link {text-decoration:none;}
-a:visited {text-decoration:none;}
-a:hover {text-decoration:underline;}
-a:active {text-decoration:underline;}
 }
 
 #fitimg {

@@ -76,7 +76,7 @@
 
     <div id="userLoggedIn">
       <div id="leaderboard" class="container row-fluid">
-        <div class="span12">
+        <div class="span12 userView">
           <div class="allGagues container">
               <div class="row-fluid stoolGagues" style="padding-bottom: 50px;">
                 <div class="span3"><div id="chartDiv1Leaderboard" style="width: 173px; height:150px;"></div></div>
@@ -86,7 +86,7 @@
               </div>
             </div>
 
-              <div class="span12" style="text-aligin:center;">
+              <div class="span12 userView" style="text-aligin:center;">
                 <h2 id="userChairLabel" style="padding-bottom:25px;">Where are you?</h2>
                 <div id="chartDivUser" style="" ></div>
               </div>
@@ -104,7 +104,9 @@
           <div class="span4">
           </div>
           <div class="span4">
-            <input type="checkbox"> Toggle between user &amp; global views
+            <div style="padding-top:50px;">
+              <button class='btn' id="viewToggle">Toggle View</button>
+          </div>
           </div>
         </div>
       </div>

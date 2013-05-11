@@ -47,8 +47,16 @@ window.App =
     #$.get('data.json', after: $('').last().data('id'))
 
   setupTable: ->
-    $('.checkbox').trigger('click')
-    if $('.checkbox').prop('checked', true) then App.showUserGague() else App.showLeaderboard()
+    @toggleId = false
+    $("#viewToggle").click ->
+      App.toggleTable(@toggleId)
+      if @toggleId
+        @toggleId = false
+      else
+        @toggleId = true
+
+
+      
     #$("table#leaderboard").tablesorter({ sortList: [[1,0]] })
     $(".allGagues").hide()
     #$("#chartDivUser").hide()
@@ -273,10 +281,12 @@ window.App =
   showUserGague: ->
     $('.allGagues').fadeOut()
     $('#chartDivUser').fadeIn()
+    $('#userChairLabel').fadeIn()
     $('.chairSelect').fadeIn()
 
   showLeaderboard: ->
     $('#chartDivUser').fadeOut()
+    $('#userChairLabel').fadeOut()
     $('.allGagues').fadeIn()
     $('.chairSelect').fadeOut()
 
