@@ -9,7 +9,7 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  *= require_self
- *= require bootstrapSwitch
+ *= require toggle-switch
  *= require jquery.bxslider
  *= require_tree .
 */
@@ -101,9 +101,11 @@ h2 {
   /*.stoolGagues { display: none; }*/
   /*.stoolGaguesMobile { display: block; }*/
   #chartDivUser { width: 220px; height: 160px; margin-top: -50px;}
+  .toggleForm { width:200px; float:left; margin-left:20px; padding-top:20px; }
 }
 @media (min-width: 480px) {
   /*.stoolGagues { display: block; }*/
   /*.stoolGaguesMobile { display: none; }*/
   #chartDivUser { width: 800px; height: 600px; margin-top: -200px;}
+  .toggleForm { width:300px; float:left; left:-200px; padding-top:20px; margin-left:-100px; }
 }
