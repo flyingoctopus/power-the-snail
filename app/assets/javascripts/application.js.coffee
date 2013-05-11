@@ -12,6 +12,7 @@
 
 //= require jquery
 //= require jquery_ujs
+//= require jquery.bxslider
 //= require jquery.fittext
 //= require bootstrap
 //= require bootstrapSwitch
@@ -41,8 +42,9 @@ window.App =
     #$.get('data.json', after: $('').last().data('id'))
 
   setupTable: ->
-    $("table#leaderboard").tablesorter({ sortList: [[1,0]] })
-    $("#chartDivUser").hide()
+    #$("table#leaderboard").tablesorter({ sortList: [[1,0]] })
+    $(".allGagues").hide()
+    #$("#chartDivUser").hide()
     $(".switch").on "switch-change", (e, data) ->
       value = data.value
       App.toggleTable(value)
@@ -58,6 +60,7 @@ window.App =
       titleFontColor: "#000"
       labelFontColor: "#000"
       showInnerShadow: true
+      label: "Watts"
     )
 
     @g2 = new JustGage(
@@ -69,6 +72,7 @@ window.App =
       titleFontColor: "#000"
       labelFontColor: "#000"
       showInnerShadow: true
+      label: "Watts"
     )
 
     @g3 = new JustGage(
@@ -80,6 +84,7 @@ window.App =
       titleFontColor: "#000"
       labelFontColor: "#000"
       showInnerShadow: true
+      label: "Watts"
     )
 
     @g4 = new JustGage(
@@ -91,6 +96,7 @@ window.App =
       titleFontColor: "#000"
       labelFontColor: "#000"
       showInnerShadow: true
+      label: "Watts"
     )
 
     @g5 = new JustGage(
@@ -98,10 +104,112 @@ window.App =
       value: 67
       min: 0
       max: 60
+      titleFontColor: "#000"
+      labelFontColor: "#000"
+      label: "Watts"
+      #showInnerShadow: true
+      #relativeGaugeSize: true
+    )
+
+    @g1mobile = new JustGage(
+      id: "chartDiv1mobile"
+      value: 35
+      min: 0
+      max: 60
+      title: "Stool 1"
+      titleFontColor: "#000"
+      labelFontColor: "#000"
+      showInnerShadow: true
+      relativeGaugeSize: true
+      label: "Watts"
+    )
+
+    @g2mobile = new JustGage(
+      id: "chartDiv2mobile"
+      value: 67
+      min: 0
+      max: 60
+      title: "Stool 2"
+      titleFontColor: "#000"
+      labelFontColor: "#000"
+      showInnerShadow: true
+      relativeGaugeSize: true
+      label: "Watts"
+    )
+
+    @g3mobile = new JustGage(
+      id: "chartDiv3mobile"
+      value: 84
+      min: 0
+      max: 60
+      title: "Stool 3"
+      titleFontColor: "#000"
+      labelFontColor: "#000"
+      showInnerShadow: true
+      relativeGaugeSize: true
+      label: "Watts"
+    )
+
+    @g4mobile = new JustGage(
+      id: "chartDiv4mobile"
+      value: 17
+      min: 0
+      max: 60
       title: "Stool 4"
       titleFontColor: "#000"
       labelFontColor: "#000"
       showInnerShadow: true
+      relativeGaugeSize: true
+      label: "Watts"
+    )
+
+    # Temp
+    @g1Leaderboard = new JustGage(
+      id: "chartDiv1Leaderboard"
+      value: 35
+      min: 0
+      max: 60
+      title: "Stool 1"
+      titleFontColor: "#000"
+      labelFontColor: "#000"
+      showInnerShadow: true
+      label: "Watts"
+    )
+
+    @g2Leaderboard = new JustGage(
+      id: "chartDiv2Leaderboard"
+      value: 67
+      min: 0
+      max: 60
+      title: "Stool 2"
+      titleFontColor: "#000"
+      labelFontColor: "#000"
+      showInnerShadow: true
+      label: "Watts"
+    )
+
+    @g3Leaderboard = new JustGage(
+      id: "chartDiv3Leaderboard"
+      value: 84
+      min: 0
+      max: 60
+      title: "Stool 3"
+      titleFontColor: "#000"
+      labelFontColor: "#000"
+      showInnerShadow: true
+      label: "Watts"
+    )
+
+    @g4Leaderboard = new JustGage(
+      id: "chartDiv4Leaderboard"
+      value: 17
+      min: 0
+      max: 60
+      title: "Stool 4"
+      titleFontColor: "#000"
+      labelFontColor: "#000"
+      showInnerShadow: true
+      label: "Watts"
     )
 
   updateGagues: (e) ->
@@ -113,20 +221,32 @@ window.App =
     @g2.refresh Math.round e.data.split(",")[1] * current
     @g3.refresh Math.round e.data.split(",")[2] * current
     @g4.refresh Math.round e.data.split(",")[3] * current
+    @g1mobile.refresh Math.round e.data.split(",")[0] * current
+    @g2mobile.refresh Math.round e.data.split(",")[1] * current
+    @g3mobile.refresh Math.round e.data.split(",")[2] * current
+    @g4mobile.refresh Math.round e.data.split(",")[3] * current
+    @g1Leaderboard.refresh Math.round e.data.split(",")[0] * current
+    @g2Leaderboard.refresh Math.round e.data.split(",")[1] * current
+    @g3Leaderboard.refresh Math.round e.data.split(",")[2] * current
+    @g4Leaderboard.refresh Math.round e.data.split(",")[3] * current
+
+    @g5.refresh Math.round e.data.split(",")[3] * current
 
 
   toggleTable: (e) ->
     switch e
-      when true then App.showUserGague()
-      when false then App.showLeaderboard()
+      when false then App.showUserGague()
+      when true then App.showLeaderboard()
 
   showUserGague: ->
-    $('.leaderboard').fadeOut()
+    $('.allGagues').fadeOut()
     $('#chartDivUser').fadeIn()
+    $('.chairSelect').fadeIn()
 
   showLeaderboard: ->
     $('#chartDivUser').fadeOut()
-    $('.leaderboard').fadeIn()
+    $('.allGagues').fadeIn()
+    $('.chairSelect').fadeOut()
 
   checkUser: (callback) ->
     that = this
