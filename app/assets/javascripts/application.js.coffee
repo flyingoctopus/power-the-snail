@@ -95,16 +95,16 @@ window.App =
       showInnerShadow: true
     )
 
-    @g5 = new JustGage(
-      id: "chartDivUser"
-      value: 67
-      min: 0
-      max: 100
-      title: "Stool 4"
-      titleFontColor: "#000"
-      labelFontColor: "#000"
-      showInnerShadow: true
-    )
+    #@g5 = new JustGage(
+      #id: "chartDivUser"
+      #value: 67
+      #min: 0
+      #max: 100
+      #title: "Stool 4"
+      #titleFontColor: "#000"
+      #labelFontColor: "#000"
+      #showInnerShadow: true
+    #)
 
   updateGagues: (e) ->
     $('.btn-group').children('button').each ->
