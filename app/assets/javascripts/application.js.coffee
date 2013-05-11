@@ -25,6 +25,7 @@ window.App =
   initialize: ->
     $("#app").hide()
     $("#app").fadeIn()
+    App.chair = 1
 
   poll: ->
     ws = new WebSocket("ws://snailnet:8784")
@@ -48,6 +49,15 @@ window.App =
     $(".switch").on "switch-change", (e, data) ->
       value = data.value
       App.toggleTable(value)
+    $("#chair1_select").click ->
+      App.chair = 1
+    $("#chair2_select").click ->
+      App.chair = 2
+    $("#chair3_select").click ->
+      App.chair = 3
+    $("#chair4_select").click ->
+      App.chair = 4
+    
 
   setupGagues: ->
     console.log 'setup gagues'
@@ -230,7 +240,9 @@ window.App =
     @g3Leaderboard.refresh Math.round e.data.split(",")[2] * current
     @g4Leaderboard.refresh Math.round e.data.split(",")[3] * current
 
-    @g5.refresh Math.round e.data.split(",")[3] * current
+    @g5.refresh Math.round e.data.split(",")[App.chair] * current
+    console.log App.chair
+
 
 
   toggleTable: (e) ->
