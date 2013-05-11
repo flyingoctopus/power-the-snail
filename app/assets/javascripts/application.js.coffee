@@ -26,7 +26,7 @@ window.App =
     $("#app").fadeIn()
 
   poll: ->
-    ws = new WebSocket("ws://localhost:8784")
+    ws = new WebSocket("ws://snailnet:8784")
     ws.onmessage = (e) ->
       App.updateGagues(e)
 
@@ -53,7 +53,7 @@ window.App =
       id: "chartDiv1"
       value: 35
       min: 0
-      max: 100
+      max: 60
       title: "Stool 1"
       titleFontColor: "#000"
       labelFontColor: "#000"
@@ -64,7 +64,7 @@ window.App =
       id: "chartDiv2"
       value: 67
       min: 0
-      max: 100
+      max: 60
       title: "Stool 2"
       titleFontColor: "#000"
       labelFontColor: "#000"
@@ -75,7 +75,7 @@ window.App =
       id: "chartDiv3"
       value: 84
       min: 0
-      max: 100
+      max: 60
       title: "Stool 3"
       titleFontColor: "#000"
       labelFontColor: "#000"
@@ -86,7 +86,7 @@ window.App =
       id: "chartDiv4"
       value: 17
       min: 0
-      max: 100
+      max: 60
       title: "Stool 4"
       titleFontColor: "#000"
       labelFontColor: "#000"
@@ -97,7 +97,7 @@ window.App =
       id: "chartDivUser"
       value: 67
       min: 0
-      max: 100
+      max: 60
       title: "Stool 4"
       titleFontColor: "#000"
       labelFontColor: "#000"
@@ -105,13 +105,14 @@ window.App =
     )
 
   updateGagues: (e) ->
+    current = e.data.split(",")[4]
     $('.btn-group').children('button').each ->
       App.g5.refresh e.data.split(",")[$(@).val()] if $(@).hasClass("active")
 
-    @g1.refresh e.data.split(",")[0]
-    @g2.refresh e.data.split(",")[1]
-    @g3.refresh e.data.split(",")[2]
-    @g4.refresh e.data.split(",")[3]
+    @g1.refresh Math.round e.data.split(",")[0] * current
+    @g2.refresh Math.round e.data.split(",")[1] * current
+    @g3.refresh Math.round e.data.split(",")[2] * current
+    @g4.refresh Math.round e.data.split(",")[3] * current
 
 
   toggleTable: (e) ->
