@@ -22,10 +22,14 @@
 //= require_tree .
 
 window.App =
-  initialize: ->
+
+
+  initialize: =>
     $("#app").hide()
     $("#app").fadeIn()
     App.chair = 1
+    @gagueMin = 0
+    @gagueMax = 80
 
   poll: ->
     ws = new WebSocket("ws://snailnet:8784")
@@ -43,12 +47,11 @@ window.App =
     #$.get('data.json', after: $('').last().data('id'))
 
   setupTable: ->
+    $('.checkbox').trigger('click')
+    if $('.checkbox').prop('checked', true) then App.showUserGague() else App.showLeaderboard()
     #$("table#leaderboard").tablesorter({ sortList: [[1,0]] })
     $(".allGagues").hide()
     #$("#chartDivUser").hide()
-    $(".switch").on "switch-change", (e, data) ->
-      value = data.value
-      App.toggleTable(value)
     $("#chair1_select").click ->
       App.chair = 0
       $("#userChairLabel").html "Chair 1"
@@ -68,60 +71,65 @@ window.App =
     @g1 = new JustGage(
       id: "chartDiv1"
       value: 35
-      min: 0
-      max: 60
+      min: @gagueMin
+      max: @gagueMax
       title: "Stool 1"
       titleFontColor: "#000"
       labelFontColor: "#000"
       showInnerShadow: true
       label: "Watts"
+      showMinMax: false
     )
 
     @g2 = new JustGage(
       id: "chartDiv2"
       value: 67
-      min: 0
-      max: 60
+      min: @gagueMin
+      max: @gagueMax
       title: "Stool 2"
       titleFontColor: "#000"
       labelFontColor: "#000"
       showInnerShadow: true
       label: "Watts"
+      showMinMax: false
     )
 
     @g3 = new JustGage(
       id: "chartDiv3"
       value: 84
-      min: 0
-      max: 60
+      min: @gagueMin
+      max: @gagueMax
       title: "Stool 3"
       titleFontColor: "#000"
       labelFontColor: "#000"
       showInnerShadow: true
       label: "Watts"
+      showMinMax: false
     )
 
     @g4 = new JustGage(
       id: "chartDiv4"
       value: 17
-      min: 0
-      max: 60
+      min: @gagueMin
+      max: @gagueMax
       title: "Stool 4"
       titleFontColor: "#000"
       labelFontColor: "#000"
       showInnerShadow: true
       label: "Watts"
+      showMinMax: false
     )
 
     @g5 = new JustGage(
       id: "chartDivUser"
       value: 67
-      min: 0
+      min: gagueMin
       max: 60
       title: " "
       titleFontColor: "#000"
       labelFontColor: "#000"
       label: "Watts"
+      showMinMax: false
       #showInnerShadow: true
       #relativeGaugeSize: true
     )
@@ -129,102 +137,110 @@ window.App =
     #@g1mobile = new JustGage(
       #id: "chartDiv1mobile"
       #value: 35
-      #min: 0
-      #max: 60
+      #min: @gagueMin
+      #max: @gagueMax
       #title: "Stool 1"
       #titleFontColor: "#000"
       #labelFontColor: "#000"
       #showInnerShadow: true
       #relativeGaugeSize: true
       #label: "Watts"
+      #showMinMax: false
     #)
 
     #@g2mobile = new JustGage(
       #id: "chartDiv2mobile"
       #value: 67
-      #min: 0
-      #max: 60
+      #min: @gagueMin
+      #max: @gagueMax
       #title: "Stool 2"
       #titleFontColor: "#000"
       #labelFontColor: "#000"
       #showInnerShadow: true
       #relativeGaugeSize: true
       #label: "Watts"
+      #showMinMax: false
     #)
 
     #@g3mobile = new JustGage(
       #id: "chartDiv3mobile"
       #value: 84
-      #min: 0
-      #max: 60
+      #min: @gagueMin
+      #max: @gagueMax
       #title: "Stool 3"
       #titleFontColor: "#000"
       #labelFontColor: "#000"
       #showInnerShadow: true
       #relativeGaugeSize: true
       #label: "Watts"
+      #showMinMax: false
     #)
 
     #@g4mobile = new JustGage(
       #id: "chartDiv4mobile"
       #value: 17
-      #min: 0
-      #max: 60
+      #min: @gagueMin
+      #max: @gagueMax
       #title: "Stool 4"
       #titleFontColor: "#000"
       #labelFontColor: "#000"
       #showInnerShadow: true
       #relativeGaugeSize: true
       #label: "Watts"
+      #showMinMax: false
     #)
 
     # Temp
     @g1Leaderboard = new JustGage(
       id: "chartDiv1Leaderboard"
       value: 35
-      min: 0
-      max: 60
+      min: @gagueMin
+      max: @gagueMax
       title: "Stool 1"
       titleFontColor: "#000"
       labelFontColor: "#000"
       showInnerShadow: true
       label: "Watts"
+      showMinMax: false
     )
 
     @g2Leaderboard = new JustGage(
       id: "chartDiv2Leaderboard"
       value: 67
-      min: 0
-      max: 60
+      min: @gagueMin
+      max: @gagueMax
       title: "Stool 2"
       titleFontColor: "#000"
       labelFontColor: "#000"
       showInnerShadow: true
       label: "Watts"
+      showMinMax: false
     )
 
     @g3Leaderboard = new JustGage(
       id: "chartDiv3Leaderboard"
       value: 84
-      min: 0
-      max: 60
+      min: @gagueMin
+      max: @gagueMax
       title: "Stool 3"
       titleFontColor: "#000"
       labelFontColor: "#000"
       showInnerShadow: true
       label: "Watts"
+      showMinMax: false
     )
 
     @g4Leaderboard = new JustGage(
       id: "chartDiv4Leaderboard"
       value: 17
-      min: 0
-      max: 60
+      min: @gagueMin
+      max: @gagueMax
       title: "Stool 4"
       titleFontColor: "#000"
       labelFontColor: "#000"
       showInnerShadow: true
       label: "Watts"
+      showMinMax: false
     )
 
   updateGagues: (e) ->
@@ -245,7 +261,7 @@ window.App =
     @g3Leaderboard.refresh Math.round e.data.split(",")[2] * current
     @g4Leaderboard.refresh Math.round e.data.split(",")[3] * current
 
-    @g5.refresh Math.round e.data.split(",")[App.chair] * current * 2
+    @g5.refresh Math.round e.data.split(",")[App.chair] * current
 
 
 

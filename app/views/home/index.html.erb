@@ -86,13 +86,12 @@
               </div>
             </div>
 
-              <div class="span6" style="text-aligin:center;">
+              <div class="span12" style="text-aligin:center;">
                 <h2 id="userChairLabel" style="padding-bottom:25px;">Where are you?</h2>
                 <div id="chartDivUser" style="" ></div>
               </div>
           </div>
         </div>
-      </div> <!-- userLoggedIn -->
       <div class="container row-fluid">
         <div class="span12" style="text-align:center;">
           <div class="span4">
@@ -105,26 +104,11 @@
           <div class="span4">
           </div>
           <div class="span4">
-            <div class="toggleForm" >
-              <form class="viewToggle form-horizontal" style="display:none;">
-                <div class="control-group">
-                  <div class="controls switch switch-two alert alert-success">
-                    <input id="userView" name="view" type="radio" value="true" checked>
-                    <label for="userView" onclick="">Me</label>
-
-                    <input id="globalView" name="view" type="radio" value="false">  
-                    <label for="globalView" onclick="">All</label>
-                    
-                    <span class="slide-button btn btn-info disabled"></span>
-                  </div>
-                </div>
-              </form>
-            </div>
+            <input type="checkbox"> Toggle between user &amp; global views
           </div>
         </div>
       </div>
-
-
+      </div> <!-- userLoggedIn -->
   </div>
 </div>
 
@@ -133,11 +117,9 @@
     <% if user_signed_in? %>
       $('#userNotLoggedIn').hide();
       $('#userLoggedIn').fadeIn();
-      $('.viewToggle').fadeIn();
     <% else %>
       $('#userLoggedIn').hide();
       $('#userNotLoggedIn').fadeIn();
-      $('.viewToggle').fadeOut();
     <% end %>
   });
 <% end %>
