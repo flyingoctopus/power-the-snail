@@ -1,0 +1,29 @@
+<div id='app'>
+  <div class="container">
+    <div class="row-fluid">
+      <div class="span12 text-center" style="padding-top: 50px;">
+        <%= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
+          <%= f.error_notification %>
+
+          <div class="inputs">
+            <%= f.input :email, :required => true, :autofocus => true %>
+            <%= f.input :password, :required => true %>
+            <%= f.input :password_confirmation, :required => true %>
+          </div>
+
+          <div class="actions">
+            <%= f.button :submit, "Sign up" %>
+          </div>
+        <% end %>
+
+        <%= render :partial => "devise/shared/links", :style => "padding-left: 50px;" %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%= javascript_tag do %>
+  $( document ).ready(function() {
+      $('.subheader').text('Register');
+  });
+<% end %>

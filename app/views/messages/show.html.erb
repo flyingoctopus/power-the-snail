@@ -1,0 +1,22 @@
+<div id='app'>
+  <div class="container">
+    <div class="row-fluid">
+      <div class="span12 text-center" style="padding-top: 50px;">
+        <p id="notice"><%= notice %></p>
+
+        <p>
+          <b>Body:</b>
+          <%= @message.body %>
+        </p>
+
+        <p>
+          <b>Published:</b>
+          <%= @message.published %>
+        </p>
+        <%= link_to 'Edit', edit_message_path(@message) %> |
+        <%= link_to 'Back', messages_path %>
+      </div>
+    </div>
+  </div>
+</div>
+

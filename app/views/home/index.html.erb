@@ -1,0 +1,164 @@
+<div id='app'>
+  <div class="home">
+    <div id="userNotLoggedIn">
+        <div class="row-fluid stoolGagues" style="padding-bottom: 50px;">
+          <div class="span3"><div id="chartDiv1" style="width: 300px; height:150px;"></div></div>
+          <div class="span3"><div id="chartDiv2" style="width: 300px; height:150px;"></div></div>
+          <div class="span3"><div id="chartDiv3" style="width: 300px; height:150px;"></div></div>
+          <div class="span3"><div id="chartDiv4" style="width: 300px; height:150px;"></div></div>
+        </div>
+        <div class="container">
+          <div class="row-fluid">
+            <div class="span12">
+              <div class="row-fluid">
+                <div class="span4">
+                  <div id="newletter" style="padding-right:25px;">
+                    <p><%= @message.body.html_safe %></p>
+                  </div>
+                </div>
+                <div class="span4">
+                  <%= form_for("user", :url => user_session_path, :html => {:class => "form-vertical"}) do |f| %>
+                    <fieldset>
+                      <div class="control-group">
+                        <label class="control-label" for="user_email">Email</label>
+                        <div class="controls"><%= f.text_field :email, :placeholder => "Email" %></div>
+                      </div>
+                      <div class="control-group">
+                        <label class="control-label" for="user_password">Password</label>
+                        <div class="controls">
+                          <%= f.password_field :password, :placeholder => "Password" %>
+                        </div>
+                      <div class="control-group">
+                        <%= f.label :remember_me, :class => 'control-label' %>
+                        <div class="controls"><%= f.check_box :remember_me, :style => "margin-top: 0px;" %></div>
+                      </div>
+                      <div class="form-actions" ><%= f.submit 'Sign in', :class => 'btn btn-primary' %>
+                      <%= link_to 'Register', new_user_registration_path, :class => 'btn', :style => 'margin-left: 20px;' %> </div>
+                      <%= link_to "Forgot your password?", new_password_path('user') %>
+          </div>
+                    </fieldset>
+                  <% end %>
+                </div>
+                <div class="span4">
+                  <%= form_for("user", :url => user_session_path, :html => {:class => "form-vertical"}) do |f| %>
+                    <fieldset>
+                      <div class="control-group">
+                        <label class="control-label" for="user_email">Snailnet Newsletter</label>
+                        <div class="controls"><%= f.text_field :email, :placeholder => "Sign Up!" %></div>
+                      </div>
+                      <div class="control-group">
+                        <div class="form-actions" >
+                          <%= f.submit 'Sign Up', :class => 'btn btn-primary' %>
+                        </div>
+                      </div>
+                    </fieldset>
+                  <% end %>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div> <!-- id="userNotLoggedIn" -->
+
+    <div id="userLoggedIn">
+      <div class="container row-fluid">
+        <div class="span12" style="text-align:center; padding-bottom: 45px;">
+          <div class="span4"></div>
+          <div class="span4">
+
+          </div>
+          <div class="span4"></div>
+        </div>
+      </div>
+      <div class="container row">
+        <h3 style="padding-bottom:25px;">Please select your station</h3>
+        <div class="span12" style="text-align:center; padding-bottom: 45px;">
+            <div class="btn-group chair-select" data-toggle="buttons-radio">
+              <button id="chair1_select" value='0' type="button" class="btn">One</button>
+              <button id="chair2_select" value='1' type="button" class="btn">Two</button>
+              <button id="chair3_select" value='2' type="button" class="btn">Three</button>
+              <button id="chair4_select" value='3' type="button" class="btn">Four</button>
+          </div>
+        </div>
+      </div>
+      <div class="container row-fluid">
+        <div class="span12" style="text-align:center; padding-bottom: 45px;">
+          <div class="span4"></div>
+          <div class="span4">
+            <div class="switch" data-on-label="Me" data-off-label="All">
+              <input type="checkbox">
+            </div>
+          </div>
+          <div class="span4"></div>
+        </div>
+      </div>
+
+      <div id="leaderboard" class="container row-fluid">
+        <div class="span12">
+          <table class="table table-bordered table-striped leaderboard">
+              <thead>
+                  <tr>
+                      <th>Rank</th>
+                      <th>Name</th>
+                      <th>Score</th>
+                  </tr>
+              </thead>
+              <tbody>
+                <% @users.each_with_index do |user, index| %>
+                    <tr>
+                      <td><%= index %></td>
+                      <td><%= user.name %></td>
+                      <td><%= user.score %></td>
+                    </tr>
+                <% end %>
+              </tbody>
+          </table>
+          <!-- <div class="span4"></div> -->
+          <!-- <div class="span4"><div id="chartDivUser" style="width: 200px; height:150px;"></div></div> -->
+          <div class="span12">
+            <div role="main">
+              <div class="numbers">
+                <img class="cover" src="<%= image_path "speedometer-cover.png" %>">        
+                <img class="speedometer-numbers" src="<%= image_path "speedometer-dots-stroke.png" %>" alt="Speedometer numbers">
+                <img class="speedometer-title" src="<%= image_path "speedometer.png" %>" alt="Speed-O-Meter">        
+                <!-- <ol>
+                <li class="mph-0">0</li>
+                <li class="mph-10">10</li>
+                <li class="mph-20">20</li>
+                <li class="mph-30">30</li>                                                         
+                <li class="mph-40">40</li>
+                <li class="mph-50">50</li>
+                <li class="mph-60">60</li>
+                <li class="mph-70">70</li>
+                <li class="mph-80">80</li> 
+                </ol> -->
+              </div>    
+              <div id="speedometer">
+                <div id="box">
+                  <p class="point"></p>
+                </div>
+                <div id="slider"></div>
+                <!-- <input type="text" id="amount" style="border:0; color:#f6931f; font-weight:bold;" /> -->
+              </div>
+            </div>
+          </div>
+          <!-- <div class="span4"></div> -->
+
+        </div>
+      </div> <!-- userLoggedIn -->
+
+  </div>
+</div>
+
+<%= javascript_tag do %>
+  $( document ).ready(function() {
+    <% if user_signed_in? %>
+      $('#userNotLoggedIn').hide();
+      $('#userLoggedIn').fadeIn();
+    <% else %>
+      $('#userLoggedIn').hide();
+      $('#userNotLoggedIn').fadeIn();
+    <% end %>
+  });
+<% end %>

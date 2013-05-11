@@ -1,0 +1,14 @@
+<%= simple_form_for(@datum) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :chair %>
+    <%= f.input :value %>
+    <%= f.input :user %>
+    <%= f.input :timestamp %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

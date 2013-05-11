@@ -1,0 +1,17 @@
+<div id='app'>
+  <div class="container">
+    <div class="row-fluid">
+      <div class="span12 text-center" style="padding-top: 50px;">
+        <%= form_for @message do |f| %>
+          <fieldset>
+            <legend>Edit Message of the Day</legend>
+            <div class="controls">
+              <%= f.text_area :body, :class => "field span12" %><br />
+            </div>
+          <%= f.submit %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+
