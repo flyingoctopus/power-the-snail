@@ -113,6 +113,7 @@ h2 {
   .navBar { width:100%; }
   .navbar-inner { width:120%; }
 }
+
 @media (min-width: 480px) {
   #loginForm { display:block; }
   #newsletter { display:block; }
@@ -126,4 +127,6 @@ h2 {
   #chartDiv2 { display:block; }
   #chartDiv3 { display:block; }
   #chartDiv4 { display:block; }
+  .paginationButtons { display: none; }
+
 }
