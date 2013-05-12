@@ -30,6 +30,7 @@ window.App =
     App.chair = 1
     @gagueMin = 0
     @gagueMax = 80
+    @mobilePage = 1
 
   poll: ->
     ws = new WebSocket("ws://snailnet:8784")
@@ -75,7 +76,15 @@ window.App =
     
 
   setupGagues: ->
-    console.log 'setup gagues'
+    $('.mobileLoginBtn').click ->
+      $('#loginForm').fadeIn()
+      
+    $('.pageBackBtn').click ->
+      App.pageUpMobile()
+
+    $('.pageForwardBtn').click ->
+      App.pageDownMobile()
+
     @g1 = new JustGage(
       id: "chartDiv1"
       value: 35
@@ -250,7 +259,7 @@ window.App =
       label: "Watts"
       showMinMax: false
     )
-
+    
   updateGagues: (e) ->
     current = e.data.split(",")[4]
     $('.btn-group').children('button').each ->
@@ -300,6 +309,37 @@ window.App =
       error: ->
       callback false
 
+  pageUpMobile: ->
+    @mobilePage++ unless @mobilePage == 4
+    @toggleMobilePage()
+
+  pageDownMobile: ->
+    @mobilePage-- unless @mobilePage == 1
+    @toggleMobilePage()
+
+  toggleMobilePage: ->
+    if @mobilePage == 1
+      $("#chartDiv1").fadeIn()
+      $("#chartDiv2").fadeOut()
+      $("#chartDiv3").fadeOut()
+      $("#chartDiv4").fadeOut()
+    else if @mobilePage == 2
+      $("#chartDiv1").fadeOut()
+      $("#chartDiv2").fadeIn()
+      $("#chartDiv3").fadeOut()
+      $("#chartDiv4").fadeOut()
+    else if @mobilePage == 3
+      $("#chartDiv1").fadeOut()
+      $("#chartDiv2").fadeOut()
+      $("#chartDiv3").fadeIn()
+      $("#chartDiv4").fadeOut()
+    else if @mobilePage == 4
+      $("#chartDiv1").fadeOut()
+      $("#chartDiv2").fadeOut()
+      $("#chartDiv3").fadeOut()
+      $("#chartDiv4").fadeIn()
+    else
+      @mobilePage = 1
 $ ->
   if $('#chartDiv1').get(0)
     App.initialize()

@@ -98,14 +98,32 @@ h2 {
 }
 
 @media (max-width: 480px) {
+  .newsletter { display:none; }
+  #newsletter { display:none; }
+  .stoolGagues { margin-left: -40px; }
   /*.stoolGagues { display: none; }*/
   /*.stoolGaguesMobile { display: block; }*/
   #chartDivUser { width: 220px; height: 160px; margin-top: -50px;}
   .toggleForm { width:200px; float:left; margin-left:20px; padding-top:20px; }
+  #loginForm { display:none; }
+  #chartDiv1 { display:block; }
+  #chartDiv2 { display:none; }
+  #chartDiv3 { display:none; }
+  #chartDiv4 { display:none; }
+  .navBar { width:100%; }
+  .navbar-inner { width:120%; }
 }
 @media (min-width: 480px) {
+  #loginForm { display:block; }
+  #newsletter { display:block; }
+  .newsletter { display:block; }
+  .stoolGagues { margin-left: 0px; }
   /*.stoolGagues { display: block; }*/
   /*.stoolGaguesMobile { display: none; }*/
   #chartDivUser { width: 800px; height: 600px; margin-top: -200px;}
   .toggleForm { width:300px; float:left; left:-200px; padding-top:20px; margin-left:-100px; }
+  #chartDiv1 { display:block; }
+  #chartDiv2 { display:block; }
+  #chartDiv3 { display:block; }
+  #chartDiv4 { display:block; }
 }
